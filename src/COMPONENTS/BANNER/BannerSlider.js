@@ -39,44 +39,20 @@ const BannerSlider = () => {
     return (
         <div className='bannerslider'>
             <Slider className='bannerslider' {...settings}>
-                
-                    {/* { data.map(item => {
-                        return (
-                            <div className='imagecont' key={item.id}>
-                                <img src={item.image} alt='noimg' />
-                                <div className='content'>
-                                    <h1>{item.title}</h1>
-                                    <span>{item.description}</span>
-                                    <button>Shop More</button>
-                                </div>
+
+                {data.map((item) => {
+                    return (
+                        <div className="imagecont" key={item.id}>
+                            <img src={item.image} alt="noimg" />
+                            <div className="content">
+                                <h1>{item.title}</h1>
+                                <span>{item.description}</span>
+                                <button>Shop More</button>
                             </div>
-                        )
-                    })} */}
-                    <div className='imagecont' key={data[0].id}>
-                        <img src={data[0].image} alt='noimg' />
-                        <div className='content'>
-                            <h1>{data[0].title}</h1>
-                            <span>{data[0].description}</span>
-                            <button>Shop More</button>
                         </div>
-                    </div>
-                    <div className='imagecont' key={data[1].id}>
-                    <img src={data[1].image} alt='noimg' />
-                    <div className='content'>
-                        <h1>{data[1].title}</h1>
-                        <span>{data[1].description}</span>
-                        <button>Shop More</button>
-                    </div>
-                </div>
-                <div className='imagecont' key={data[2].id}>
-                        <img src={data[2].image} alt='noimg' />
-                        <div className='content'>
-                            <h1>{data[2].title}</h1>
-                            <span>{data[2].description}</span>
-                            <button>Shop More</button>
-                        </div>
-                    </div>
-                
+                    );
+                })}
+
             </Slider>
         </div>
     )
