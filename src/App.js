@@ -3,6 +3,7 @@ import './App.css';
 import Home from './PAGES/HomePage/Home';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ProductPage from './PAGES/ProductPage/ProductPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element= {<Home/>} ></Route>
           <Route path='/home' element= {<Home/>} ></Route>
+          <Route path = '/product/:prodId' element={<ProductPage/>}></Route>
           <Route path='/*' element= {<div> ERROR 404 PAGE NOT FOUND </div>} ></Route>
         </Routes>
       </BrowserRouter>
