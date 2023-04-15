@@ -12,6 +12,7 @@ const ProductPage = () => {
   const [productData, setProductData] = useState()
   const [activeImg, setActiveImg] = useState({})
   const [count, setCount] = useState(1)
+  const [showReview, setShowReview] = useState(false)
 
   const findData = () => {
     for (let i = 0; i < data.length; i++) {
@@ -90,6 +91,55 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+      <div className='pc2'>
+        <div className='tabs'>
+          <button className={showReview ? 'inactive' : 'active'} onClick={()=>{setShowReview(false)}}>Description</button>
+          <button className={showReview ? 'active' : 'inactive'} onClick={()=>{setShowReview(true)}} >Review</button>
+        </div>
+        {
+          !showReview ? 
+          <p className='desc'>{productData?.ProductDescription}</p> 
+          : <div className='reviewcont'>
+            <form>
+              <div className='fromgroup'>
+                <label htmlFor=''>Name</label>
+                <input type="text"></input>
+              </div>
+              <div className='fromgroup'>
+                <label htmlFor=''>Email</label>
+                <input type="email"></input>
+              </div>
+              <div className='fromgroup'>
+                <label htmlFor=''>Review</label>
+                <textarea cols="30" rows="10"></textarea>
+              </div>
+              <button>Submit</button>
+            </form>
+
+            <div className='allreview'>
+            <h1 className='head1'>Product Reviews</h1>
+              {
+                productData?.ProductReviews?.map((item,i)=>{
+                  return(
+                    <div className='review'>
+                      <div className='reviewhead'>
+                        <p className='name'>{item.Name}</p>
+                        <span className='date'>{item.Date}</span>
+                      </div>
+                      <div className='reviewbody'>
+                        {item.Review}
+                      </div>
+                    </div>
+                    
+                  )
+                })
+              }
+            </div>
+          </div>
+        }
+      </div>
+      <Footer1/>
+      <Footer2/>
     </div>
   )
 }
