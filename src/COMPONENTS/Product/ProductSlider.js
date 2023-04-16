@@ -4,13 +4,13 @@ import 'react-multi-carousel/lib/styles.css';
 import ProductCard from './ProductCard';
 import './ProductSlider.css'
 
-const ProductSlider = ({product , categoryName}) => {
+const ProductSlider = ({ product, categoryName }) => {
 
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items:  7
+      items: 7
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -31,17 +31,17 @@ const ProductSlider = ({product , categoryName}) => {
       <h1> {categoryName} </h1>
 
       <Carousel responsive={responsive}
-      autoPlay={true}
-      autoPlaySpeed={2000}
-      swipeable={true}
-      draggable={true}
-      infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={2000}
+        swipeable={true}
+        draggable={true}
+        infinite={true}
       >
-       { product?.map((item)=>{
-        return (
-          <ProductCard data={item} key={item.ProductId}/>
-        )
-       })}
+        {product?.map((item) => {
+          return (
+            <ProductCard data={item} key={item.ProductId} />
+          )
+        })}
       </Carousel>
     </div>
   )

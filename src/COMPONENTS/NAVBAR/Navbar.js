@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import logo from '../../ASSETS/logo.png'
 import Dropdown from 'react-bootstrap/Dropdown'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [cartQuantity, setcartQuantity] = useState(0);
@@ -33,30 +34,37 @@ function Navbar() {
         </div>
       </div>
       <div className='s2'>
-      <Dropdown>
-            <Dropdown.Toggle variant="" id="dropdown-basic">
-              Categories
-            </Dropdown.Toggle>
+        <Link to='/'>
+          Home
+        </Link>
+        <Dropdown>
+          <Dropdown.Toggle variant="" id="dropdown-basic">
+            Categories
+          </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Fresh Vegetables</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Fresh Fruits</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">House Cleaning</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <a href='google.com'>About us</a>
-          <a href = 'google.com'>Contat us</a>
-          <Dropdown>
-            <Dropdown.Toggle variant="" id="dropdown-basic">
-              More
-            </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">Fresh Vegetables</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Fresh Fruits</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">House Cleaning</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Link to={'/about'} >
+          <a >About us</a>
+        </Link>
+        <Link to={'/contact'} >
+          <a >Contact us</a>
+        </Link>
+        <Dropdown>
+          <Dropdown.Toggle variant="" id="dropdown-basic">
+            More
+          </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">FAQ</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Privacy Policy</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Terms & Conditions</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">FAQ</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Privacy Policy</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Terms & Conditions</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
     </nav>
   )
