@@ -15,9 +15,47 @@ const ProductCard = ({ data }) => {
         }
     }
 
-    const handleCart = ()=>{
-        alert (`${qty}  quantities of ${data.ProductName} has been added`)
-    }
+
+    let productData = data
+    const addToCart = () => {
+        let cart = JSON.parse(localStorage.getItem('cart'))
+    
+        if (cart) {
+          let itemincart = cart.find(item => item.productData.ProductId === productData.ProductId)
+          if (itemincart) {
+            cart = cart.map(item => {
+              if (item.productData.ProductId === productData.ProductId) {
+                return {
+                  ...item,
+                  quantity: item.quantity + qty
+                }
+              }
+              else {
+                return item
+              }
+            })
+          }
+          else {
+            cart = [
+              ...cart,
+              {
+                productData,
+                quantity: qty
+              }
+            ]
+          }
+        }
+        else {
+          cart = [
+            {
+              productData,
+              quantity: qty
+            }
+          ]
+        }
+        localStorage.setItem('cart', JSON.stringify(cart))
+        window.location.reload()
+      }
 
     return (
         <div className='product'>
@@ -43,7 +81,7 @@ const ProductCard = ({ data }) => {
                             <p>{qty}</p>
                             <button onClick={()=>{setqty(qty + 1)}}>+</button>
                         </div>
-                        <button className='addtocart' onClick={handleCart}>Add to cart</button>
+                        <button className='addtocart' onClick={addToCart}>Add to cart</button>
                     </div>
                     :
                     <div className='addbtn'>

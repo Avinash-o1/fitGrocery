@@ -11,7 +11,7 @@ import data from '../../ASSETS/ProductData'
 function Home() {
   return (
     <div>
-      <Navbar />
+      <Navbar reloadNavbar={false} />
       <BannerSlider />
       <HomeCategories />
       <AllProductSidebar />

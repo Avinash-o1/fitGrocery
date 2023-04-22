@@ -15,6 +15,7 @@ const ProductPage = () => {
   const [count, setCount] = useState(1)
   const [showReview, setShowReview] = useState(false)
   const [rating, setRating] = useState(0)
+  const [reloadNavbar, setReloadNavbar] = useState(false)
   let arr = [1, 2, 3, 4, 5]
 
   const findData = () => {
@@ -39,6 +40,46 @@ const ProductPage = () => {
     }
   }
 
+  const addToCart = () => {
+    let cart = JSON.parse(localStorage.getItem('cart'))
+
+    if (cart) {
+      let itemincart = cart.find(item => item.productData.ProductId === productData.ProductId)
+      if (itemincart) {
+        cart = cart.map(item => {
+          if (item.productData.ProductId === productData.ProductId) {
+            return {
+              ...item,
+              quantity: item.quantity + count
+            }
+          }
+          else {
+            return item
+          }
+        })
+      }
+      else {
+        cart = [
+          ...cart,
+          {
+            productData,
+            quantity: count
+          }
+        ]
+      }
+    }
+    else {
+      cart = [
+        {
+          productData,
+          quantity: count
+        }
+      ]
+    }
+    localStorage.setItem('cart', JSON.stringify(cart))
+    setReloadNavbar(!reloadNavbar)
+  }
+
   useEffect(() => {
     fetchProductData();
     window.scrollTo(0, 0);
@@ -49,7 +90,7 @@ const ProductPage = () => {
     <div className='productpage'>
       {/* <h1>prdouct id is {prodId} </h1>
       <div>{JSON.stringify(productData)}</div> */}
-      <Navbar />
+      <Navbar reloadNavbar={reloadNavbar} />
       <div className='pc1'>
         <Link to='/'>
           <button className='goback'>
@@ -90,7 +131,7 @@ const ProductPage = () => {
             </div>
           </div>
           <div className='btncont'>
-            <button onClick={() => { alert('added to cart') }}>Add to cart</button>
+            <button onClick={addToCart}>Add to cart</button>
             <button onClick={() => { alert('Buy now is working') }}> Buy Now</button>
           </div>
         </div>
@@ -174,10 +215,10 @@ const ProductPage = () => {
         }
       </div>
       <div className='slidercont'>
-        <ProductSlider product={data} categoryName= 'Related Products' />
+        <ProductSlider product={data} categoryName='Related Products' />
       </div>
       <div className='slidercont'>
-        <ProductSlider product={data} categoryName= 'Explore More' />
+        <ProductSlider product={data} categoryName='Explore More' />
       </div>
       <Footer1 />
       <Footer2 />
