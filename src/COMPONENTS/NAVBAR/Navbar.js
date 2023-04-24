@@ -93,9 +93,9 @@ useEffect(() => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">FAQ</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Privacy Policy</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Terms & Conditions</Dropdown.Item>
+            <Dropdown.Item href="/faq">FAQ</Dropdown.Item>
+            <Dropdown.Item href="/privacynpolicy">Privacy Policy</Dropdown.Item>
+            <Dropdown.Item href="/tnc">Terms & Conditions</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>
