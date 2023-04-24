@@ -60,8 +60,8 @@ useEffect(() => {
             <DropdownMenu>
               <DropdownItem href='/login'>Login</DropdownItem>
               <DropdownItem href='/signup'>Signup</DropdownItem>
-              <DropdownItem>Profile</DropdownItem>
-              <DropdownItem>Logout</DropdownItem>
+              <DropdownItem href='/user/accountsetting' >Profile</DropdownItem>
+              <DropdownItem >Logout</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </div>

@@ -10,6 +10,7 @@ import Login from './PAGES/Auth/Login';
 import Signup from './PAGES/Auth/Signup';
 import ForgotPaswd from './PAGES/Auth/ForgotPaswd';
 import Cart from './PAGES/Cart/Cart';
+import UserProfile from './PAGES/User/UserProfile';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path = '/signup' element= {<Signup/>}/>
           <Route path = '/forgotpswd' element= {<ForgotPaswd/>}/>
           <Route path='/cart' element= {<Cart/>}/>
+          <Route path ='/user/:activepage' element={<UserProfile/>}/>
           <Route path='/*' element= {<div> ERROR 404 PAGE NOT FOUND </div>} ></Route>
         </Routes>
       </BrowserRouter>
