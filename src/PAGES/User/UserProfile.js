@@ -8,6 +8,9 @@ import './UserProfile.css'
 import UserSidebar from '../../COMPONENTS/UserProfile/UserSidebar'
 import AccountSetting from '../../COMPONENTS/UserProfile/AccountSetting'
 import ChangePassword from '../../COMPONENTS/UserProfile/ChangePassword'
+import YourOrder from '../../COMPONENTS/UserProfile/YourOrder'
+import UserAddress from '../../COMPONENTS/UserProfile/UserAddress'
+import LegalNotice from '../../COMPONENTS/UserProfile/LegalNotice'
 
 const UserProfile = () => {
 
@@ -26,7 +29,9 @@ const UserProfile = () => {
             <div className='right'>
                 {activepage === 'accountsetting' && <AccountSetting/>}
                 {activepage === 'changepassword' && <ChangePassword/>}
-                {/* {activepage === 'yourorder' && </>} */}
+                {activepage === 'yourorder' && <YourOrder/>}
+                {activepage === 'address' && <UserAddress/>}
+                {activepage === 'legalnotice' && <LegalNotice/>}
 
             </div>
         </div>

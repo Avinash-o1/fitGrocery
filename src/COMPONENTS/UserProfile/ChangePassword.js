@@ -19,7 +19,7 @@ const ChangePassword = () => {
         </div>
 
         <div className='form-group'>
-          <label htmlFor='confirmPass'>Confirm Password <span>*</span></label>
+          <label htmlFor='confirmPass'>Confirm New Password <span>*</span></label>
           <input type='password' name='email' id='email'
 
           />
