@@ -258,7 +258,7 @@ function Navbar({ reloadNavbar }) {
                 <Dropdown.Menu>
                   <Dropdown.Item href="/login">Login</Dropdown.Item>
                   <Dropdown.Item href="/signup">Signup</Dropdown.Item>
-                  <Dropdown.Item href="/user/accountsettings">
+                  <Dropdown.Item href="/user/accountsetting">
                     Profile
                   </Dropdown.Item>
                   <Dropdown.Item href="#">Logout</Dropdown.Item>
@@ -273,11 +273,11 @@ function Navbar({ reloadNavbar }) {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item href="/FAQ">FAQ</Dropdown.Item>
-                  <Dropdown.Item href="/privacypolicy">
+                  <Dropdown.Item href="/faq">FAQ</Dropdown.Item>
+                  <Dropdown.Item href="/privacynpolicy">
                     Privacy Policy
                   </Dropdown.Item>
-                  <Dropdown.Item href="/termsandconditions">
+                  <Dropdown.Item href="/tnc">
                     Terms & Conditions
                   </Dropdown.Item>
                 </Dropdown.Menu>

@@ -88,3 +88,36 @@
     border-radius: 50%;
     background-color: rgb(255, 81, 81);
 }
+
+@media screen and (max-width: 1200px) {
+    
+    .yourorders table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    .yourorders table tr {
+        display: block;
+        margin-bottom: .625em;
+        border: none;
+    }
+
+    .yourorders table tr td {
+        border: none;
+        border-radius: 0px;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .yourorders table td::before{
+        content:attr(data-label);
+    }
+}
